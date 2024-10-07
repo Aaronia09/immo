@@ -1,0 +1,29 @@
+<!-- biens/templates/biens/index.html -->
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Index des Biens</title>
+</head>
+
+<body>
+  <nav>
+    <ul>
+      <li><a href="{% url 'index' %}">Accueil</a></li>
+      <li><a href="{% url 'inscription' %}">Inscription</a></li>
+      <li><a href="{% url 'connexion' %}">Connexion</a></li>
+      <li><a href="{% url 'deconnexion' %}">Déconnexion</a></li>
+      <li><a href="#">Contacter un Propriétaire</a></li> <!-- Lien fictif pour contacter un propriétaire -->
+    </ul>
+  </nav>
+
+  <h1>Liste des Biens</h1>
+  <ul>
+    {% for bien in biens %}
+    <li>{{ bien.titre }} - {{ bien.prix }} €</li>
+    {% endfor %}
+  </ul>
+</body>
+
+</html>
